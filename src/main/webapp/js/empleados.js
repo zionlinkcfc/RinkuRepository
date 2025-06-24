@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('#seccionAgregar').show();
 	$('#seccionBuscar').hide();
 	$('#seccionEditar').hide();
-	
+	$('#seccionEliminar').hide();
 	
 	$("#divTipo").hide();
 	$("#rolCubre").hide();
@@ -104,17 +104,28 @@ $(document).ready(function(){
 		    $('#seccionAgregar').show();
 			$('#seccionBuscar').hide();
 			$('#seccionEditar').hide();
+			$('#seccionEliminar').hide();
 		});
 		$('#btnBuscar').on('click', function() {
 		    $('#seccionAgregar').hide();
 			$('#seccionBuscar').show();
 			$('#seccionEditar').hide();
+			$('#seccionEliminar').hide();
 		});
 		$('#btnModificar').on('click', function() {
 		    $('#seccionAgregar').hide();
 			$('#seccionBuscar').hide();
 			$('#seccionEditar').show();
+			$('#seccionEliminar').hide();
 		});
+		$('#btnEliminar').on('click', function() {
+		    $('#seccionAgregar').hide();
+			$('#seccionBuscar').hide();
+			$('#seccionEditar').hide();
+			$('#seccionEliminar').show();
+		});
+		
+		
 		$('input[name="rol"]').change(function() {
            var selectedValue = $(this).val();
 		   if(selectedValue=="Auxiliar"){
@@ -167,7 +178,7 @@ $(document).ready(function(){
 	  							console.log(data);
 	  						}
 	  						if(data.noencontrado!=undefined && data.noencontrado=="true")
-	  							alert("No se encontró el empleado número: "+$('#numEmpleado').val());
+	  							alert("No se encontró el empleado número: "+$('#numEmpleadoEdit').val());
 	  					},
 	  					error: function(xhr, status, error) {
 	  		                 console.error('AJAX error:', status, error);
@@ -204,7 +215,7 @@ $(document).ready(function(){
 				success: function(data, status){
 					if(data=='1'){
 						alert("El registro fue actualizado con éxito");
-						$('#agregarEmpForm')[0].reset();
+						$('#editarEmpForm')[0].reset();
 					}
 					else
 				   		alert("No fué posible actualizar empleado, contacte al administrador");
@@ -217,4 +228,82 @@ $(document).ready(function(){
 			 return false;
 		}
 	});
+	
+	$("#buscarEmpForm3").validate({
+      rules: {
+          numEmpleadoElim: {
+              required: true,
+              number: true
+          }
+      },
+      messages: {
+          numEmpleadoElim: {
+              required: "Por favor ingresa el número de empleado",
+			  number: "Ingresa un nombre completo"
+          }
+      },
+	  submitHandler: function(form) {
+			$.ajax({
+				url:$(form).attr('action'),
+				type:$(form).attr('method'),
+				datatype: "json",	
+				data: {
+				   numEmpleado: $('#numEmpleadoElim').val()
+				},
+				success: function(data, status){
+					if(data.numEmpleado!=''){
+						$('#nombreElim').val(data.nombre);
+						//alert (data);
+						console.log(data);
+					}
+					if(data.noencontrado!=undefined && data.noencontrado=="true")
+						alert("No se encontró el empleado número: "+$('#numEmpleadoElim').val());
+				},
+				error: function(xhr, status, error) {
+	                 console.error('AJAX error:', status, error);
+	                 alert('Ocurrió un problema al consultar información');
+	            }
+			 });
+			 return false;
+		}
+	});
+	
+	
+	$("#elimEmpForm").validate({
+	      rules: {
+	          nombre: {
+	              required: true,
+	              minlength: 3
+	          }
+	      },
+	      messages: {
+	          nombre: {
+	              required: "Por favor ingresa el nombre completo del empleado",
+				  minlength: "Ingresa un nombre completo"
+	          }
+	      },
+		  submitHandler: function(form) {
+				$.ajax({
+					url:$(form).attr('action'),
+					type:$(form).attr('method'),	
+					data: {
+						numEmpleado: $('#numEmpleadoElim').val()
+					},
+					success: function(data, status){
+						if(data=='1'){
+							alert("El registro fue eliminado con éxito");
+							$('#elimEmpForm')[0].reset();
+						}
+						else
+					   		alert("No fué posible eliminar empleado, contacte al administrador");
+					},
+					error: function(xhr, status, error) {
+		                 console.error('AJAX error:', status, error);
+		                 alert('Ocurrió un problema al actualizar información');
+		            }
+				 });
+				 return false;
+			}
+		});
+	
 });

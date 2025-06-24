@@ -37,8 +37,8 @@
 		<div class="row col-md-12">
 			<button class="btn btn-primary col-md-3" id="btnAgregar">Agregar</button>
 			<button class="btn btn-warning col-md-3" id="btnBuscar">Buscar</button>
-			<button class="btn btn-danger col-md-3" id="btnModificar">Modificar</button>
-			<button class="btn btn-secondary col-md-3" id="btnEliminar">Eliminar</button>
+			<!-- button class="btn btn-danger col-md-3" id="btnModificar">Modificar</button>
+			<button class="btn btn-secondary col-md-3" id="btnEliminar">Eliminar</button-->
 		</div>
 		<div class="row col-md-12 col-md-offset-3" id="seccionAgregar"><!-- Formulario agregar empleado -->
 

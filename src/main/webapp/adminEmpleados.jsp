@@ -137,7 +137,35 @@
 							<input type="radio" id="tipo2" name= "tipoEdit" class="form-check-input" value="Externo"/><label class="form-check-label" for="tipo2">Externo</label><br/>
 						</div>
 						</div>
-						<button class="btn btn-primary" id="btnGuardar">Guardar</button>
+						<button class="btn btn-primary" id="btnActForm">Actualizar</button>
+					</form>
+				</div>
+			</div>
+		</div> 
+		
+		<div class="row col-md-12 col-md-offset-3" id="seccionEliminar"><!-- Formulario editar empleado -->
+
+			<div class="card card-body">
+
+				<h4>Modificar empleado</h4>
+				<div class="col-md-12 col-md-offset-3">
+					
+					<form id="buscarEmpForm3" action= "<%= request.getContextPath() %>/api/buscar" method="post">
+						<div class="form-group row">
+							<label for="numEmpleado" class="col-sm-3 col-form-label">Número de empleado:</label> 
+							<div class="col-sm-5" ><input type="text" class="form-control" id="numEmpleadoElim" name="numEmpleadoElim"></div>
+							<button class="btn btn-primary col-sm-2" id="btnBusca">Buscar</button>
+						</div>
+						
+					</form>
+					
+					 <form id="elimEmpForm" action= "<%= request.getContextPath() %>/api/eliminar" method="post">
+
+						<div class="form-group row">
+							<label for="nombre" class="col-sm-3 col-form-label">Nombre Completo:</label> 
+							<div class="col-sm-9" ><input type="text" class="form-control" id="nombreElim" name="nombre" disabled></div>
+						</div>
+						<button class="btn btn-primary" id="btnElimForm">Eliminar</button>
 					</form>
 				</div>
 			</div>
