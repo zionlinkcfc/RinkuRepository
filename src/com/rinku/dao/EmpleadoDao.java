@@ -69,11 +69,8 @@ public class EmpleadoDao {
 	        boolean modificado= false;
 	        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 	            transaction = session.beginTransaction();
-	            result = session.get(Empleado.class, nuevo.getNumeroEmpleado());
-	            if(result!=null) {
-	            	session.persist(nuevo);
-	            	modificado=true;
-	            }
+            	session.update(nuevo);
+            	modificado=true;
 	            transaction.commit();
 	        } catch (Exception e) {
 	            if (transaction != null) {

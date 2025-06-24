@@ -69,7 +69,7 @@
 			</div>
 		</div> 
 		
-		<div class="row col-md-12 col-md-offset-3" id="seccionBuscar"><!-- Formulario agregar empleado -->
+		<div class="row col-md-12 col-md-offset-3" id="seccionBuscar"><!-- Formulario buscar empleado -->
 			<div class="card card-body">
 				<h4>Buscar empleado</h4>
 				<div class="col-md-12 col-md-offset-3">
@@ -100,6 +100,49 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="row col-md-12 col-md-offset-3" id="seccionEditar"><!-- Formulario editar empleado -->
+
+			<div class="card card-body">
+
+				<h4>Modificar empleado</h4>
+				<div class="col-md-12 col-md-offset-3">
+					
+					<form id="buscarEmpForm2" action= "<%= request.getContextPath() %>/api/buscar" method="post">
+						<div class="form-group row">
+							<label for="numEmpleado" class="col-sm-3 col-form-label">Número de empleado:</label> 
+							<div class="col-sm-5" ><input type="text" class="form-control" id="numEmpleadoEdit" name="numEmpleadoEdit"></div>
+							<button class="btn btn-primary col-sm-2" id="btnBusca">Buscar</button>
+						</div>
+						
+					</form>
+					
+					 <form id="editarEmpForm" action= "<%= request.getContextPath() %>/api/modificar" method="post">
+
+						<div class="form-group row">
+							<label for="nombre" class="col-sm-3 col-form-label">Nombre Completo:</label> 
+							<div class="col-sm-9" ><input type="text" class="form-control" id="nombreEdit" name="nombre"></div>
+						</div>
+						<div class="row col-md-12 col-md-offset-3">
+						<div class="form-check row col-md-6 col-md-offset-3">
+							<label>Rol:</label> <br/>
+							<input type="radio" id="rol" name= "rolEdit" class="form-check-input" value="Chofer" checked/><label class="form-check-label" for="rol">Chofer</label><br/>
+							<input type="radio" id="rol2" name= "rolEdit" class="form-check-input" value="Cargador"/><label class="form-check-label" for="rol2">Cargador</label><br/>
+							<input type="radio" id="rol3" name= "rolEdit" class="form-check-input" value="Auxiliar"/><label class="form-check-label" for="rol3">Auxiliar</label>
+						</div>
+						
+						<div class="form-check row col-md-6 col-md-offset-3" id="divTipo">
+							<label>Tipo:</label> <br/>
+							<input type="radio" id="tipo" name= "tipoEdit" class="form-check-input" value="Interno" checked/><label class="form-check-label" for="tipo">Interno</label><br/>
+							<input type="radio" id="tipo2" name= "tipoEdit" class="form-check-input" value="Externo"/><label class="form-check-label" for="tipo2">Externo</label><br/>
+						</div>
+						</div>
+						<button class="btn btn-primary" id="btnGuardar">Guardar</button>
+					</form>
+				</div>
+			</div>
+		</div> 
+		
 	</div>
 </body>
 </html>
