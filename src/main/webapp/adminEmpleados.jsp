@@ -20,10 +20,11 @@
 <body>
 	<div class="container">
 		<div class="row text-center col-md-12">
+			<a class="col-sm-3 btn btn-secondary" href="index.jsp">Inicio</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="adminEmpleados.jsp">Administrar empleados</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="adminMovimientos.jsp">Administrar movimientos</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="calculadoraSueldo.jsp">Calcular sueldo empleado</a>
-		</div>
+		</div><br/>
 		<div class="row text-center" style="color: blue;">
 			<h2>Administrar empleados</h2>
 		</div>

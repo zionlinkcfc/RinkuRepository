@@ -11,9 +11,13 @@
 		crossorigin="anonymous">
 </head>
 <body>
-	<h1>Sistema Rinku</h1>
-	<a href="adminEmpleados.jsp">Administrar empleados</a><br/>
-	<a href="adminMovimientos.jsp">Administrar movimientos</a><br/>
-	<a href="calculadoraSueldo.jsp">Calcular sueldo empleado</a>
+	<div class="container-fluid p-0"  style="background-image: url('img/88246.jpg'); background-size: cover; height: 100vh;" >
+		<div class="text-center">
+			<h1>Sistema Rinku</h1><br/><br/>
+			<a href="adminEmpleados.jsp" class="btn btn-dark">Administrar empleados</a><br/><br/>
+			<a href="adminMovimientos.jsp" class="btn btn-info">Administrar movimientos</a><br/><br/>
+			<a href="calculadoraSueldo.jsp" class="btn btn-warning">Calcular sueldo empleado</a>
+		</div>
+	</div>
 </body>
 </html>

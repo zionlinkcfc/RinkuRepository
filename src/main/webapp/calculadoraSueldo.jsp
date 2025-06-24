@@ -17,13 +17,14 @@
 <body>
 	<div class="container">
 		<div class="row text-center col-md-12">
+			<a class="col-sm-3 btn btn-secondary" href="index.jsp">Inicio</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="adminEmpleados.jsp">Administrar empleados</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="adminMovimientos.jsp">Administrar movimientos</a><br/>
 			<a class="col-sm-3 btn btn-secondary" href="calculadoraSueldo.jsp">Calcular sueldo empleado</a>
-		</div>
+		</div><br/>
 		<div class="row text-center" style="color: blue;">
 			<h2>Calcular sueldo</h2>
-		</div>
+		</div><br/>
 		<div class="row col-md-12 col-md-offset-3" id="seccionBuscarEmpleado">
 			<div class="card card-body">
 				<h4>Buscar empleado</h4>
@@ -60,7 +61,7 @@
 							<div class="col-sm-6" ><input type="date" class="form-control" id="fechaFin" name="fechaFin"/></div>
 						</div>
 						<button class="btn btn-primary col-sm-2" id="btnCalcula">Calcular sueldo</button>
-					</form>
+					</form><br/>
 					<h5>Percepciones</h5>
 					<div class="row col-md-8">
 						<label class="col-sm-4 col-form-label">Días laborados : </label>
