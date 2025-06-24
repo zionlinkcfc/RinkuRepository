@@ -9,6 +9,14 @@ $(document).ready(function(){
 	  minimumFractionDigits: 2 
 	});
 	
+	$('#btnLimpia').on('click',function(){
+		console.log('click');
+		$("#buscarEmpForm")[0].reset();
+		$('#lblNombre').text('');
+		$('#lblRol').text('');
+		$('#lblTipo').text('');
+	}); 	
+	
 	$("#buscarEmpForm").validate({
 	  rules: {
 	      numEmpleado: {

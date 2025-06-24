@@ -92,7 +92,6 @@
 						</div>
 						
 						<button class="btn btn-primary" id="btnGuardar">Guardar</button>
-						<button class="btn btn-danger" id="btnCancelar">Cancelar</button>
 					</form>
 				</div>
 			</div>

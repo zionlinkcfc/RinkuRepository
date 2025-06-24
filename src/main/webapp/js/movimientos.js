@@ -14,12 +14,17 @@ $(document).ready(function(){
 	$('#btnBuscar').on("click",function(){
 		$('#seccionAgregar').hide();
 		$('#seccionBuscar').show();
-		
-		if(table!=undefined)table.clear().draw();
+		if(table!=undefined){
+			table.clear().draw();
+			table.destroy();
+		}
 	});
 	$('#btnBorrar').on("click",function(){
 		$("#buscarEmpForm")[0].reset();		
-		if(table!=undefined)table.clear().draw();
+		if(table!=undefined){
+			table.clear().draw();
+			table.destroy();
+		}
 	});
 	var table;
 	

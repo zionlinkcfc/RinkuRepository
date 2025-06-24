@@ -33,7 +33,7 @@
 							<label for="numEmpleado" class="col-sm-3 col-form-label">Número de empleado:</label> 
 							<div class="col-sm-5" ><input type="text" class="form-control" id="numEmpleado" name="numEmpleado"></div>
 							<button class="btn btn-primary col-sm-2" id="btnBusca">Buscar</button>
-							<button type ="button" class="btn btn-danger col-sm-2" id="btnBorrar">Borrar</button>
+							<button type ="button" class="btn btn-danger col-sm-2" id="btnLimpia">Borrar</button>
 						</div>
 						
 					</form>
